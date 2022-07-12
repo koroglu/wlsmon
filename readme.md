@@ -1,15 +1,15 @@
-# MicroProfile generated Application
+# WLSMon Application Backed By MicroProfile v4.1 & Angular JS
 
 ## Introduction
 
-MicroProfile Starter has generated this MicroProfile application for you.
+Apache Cassandra For Persistency Layer
 
 The generation of the executable jar file can be performed by issuing the following command
 
 
     mvn clean package
 
-This will create an executable jar file **demo-mp.jar** within the _target_ maven folder. This can be started by executing the following command
+This will create an executable jar file **wlsmon.jar** within the _target_ maven folder. This can be started by executing the following command
 
     java -jar target/demo-mp.jar
 
@@ -25,17 +25,14 @@ unit and integration tests are run on pressing Enter in the command terminal; yo
     mvn liberty:dev
 
 
-
-
-
-To launch the test page, open your browser at the following URL
+To launch the test page, open your browser at the following URL, please change server.xml file accordingly for different customer env. 
 
     http://localhost:9080/index.html  
 
 
 ## Next Step
 
-Leave the server-a server running and proceed with the instructions contained in `demo/service-b/readme.md`.
+Leave the wlsmon server running and proceed with the instructions contained in `readme.md`.
 
 
 ## Specification examples
