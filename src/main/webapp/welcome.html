@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html>
 <style>
+body {
+  font: 16px / 24px "Rubik", sans-serif;
+  color:#2b2d42;
+  background:#e5e5e5;
+  margin:50px 0;
+}
 table, th , td  {
   border: 1px solid grey;
   border-collapse: collapse;
@@ -12,6 +18,46 @@ table tr:nth-child(odd) {
 table tr:nth-child(even) {
   background-color: #ffffff;
 }
+.srvCards{
+  display: flex;
+  padding: 25px 0px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+.srvCard {
+  display: flex;
+  flex-direction:column;
+  flex: 0 0 100px;
+  padding: 20px;
+  background:#fff;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0,0,0,20%);
+  scroll-snap-align: start;
+  transition: all 0.2s;
+}
+.srvCard:not(:last-child) {
+  margin-right: 10px;
+}
+.srvCard:hover {
+  color: #fff;
+  background: #ef233c;
+}
+.srvCards::-webkit-scrollbar {
+  height: 12px;
+}
+.srvCards::-webkit-scrollbar-thumb,
+.srvCards::-webkit-scrollbar-track {
+  border-radius: 95px;
+}
+.srvCards::-webkit-scrollbar-thumb {
+  background:#c00424;
+}
+.srvCards::-webkit-scrollbar-track {
+  background:#edf2f4;
+}
+
+
+
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <body>
@@ -24,8 +70,22 @@ table tr:nth-child(even) {
     <td>{{ x.name }}</td>
     <td>{{ x.state }}</td>
     <td>{{ x.domainName }}</td>
+    <td ng-if="x.health">{{x.health}}</td>
   </tr>
 </table>
+  <div class="srvCards">
+    <div class="srvCard" ng-repeat="j in names">
+      <div class="srvName">
+        <h1>{{j.name}}</h1>
+      </div>
+      <div class="status">
+        <h3>{{j.state}}</h3>
+      </div>
+      <div class="health" ng-if="j.health">
+        <h3>{{j.health}}</h3>
+      </div>
+    </div>
+  </div>
 
 </div>
 
