@@ -3,11 +3,12 @@
 
     <featureManager>
         <feature>microProfile-4.1</feature>
-        <feature>concurrent-1.0</feature>
-        
-    </featureManager>
-    
 
+        <feature>concurrent-1.0</feature>
+        <feature>ejbLite-3.2</feature>
+    </featureManager>
+
+    <ManagedScheduledExecutorService jindiName="concurrent/scheduledExecutor"/>
     <httpEndpoint id="defaultHttpEndpoint"
                   httpPort="9080"
                   httpsPort="9443" host="192.168.56.1" />

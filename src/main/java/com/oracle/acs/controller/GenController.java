@@ -3,6 +3,7 @@ package com.oracle.acs.controller;
 import java.util.Base64;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 import javax.inject.Singleton;
 import javax.json.Json;
@@ -29,7 +30,10 @@ public class GenController {
 
 	@Inject
 	private CassandraDAO cassandraDAO;
-
+	@PostConstruct
+	void init(){
+		System.out.println("***********INITIALISED***********");
+	}
 	@GET
 	@Path("/listDomains")
 	public String listDomains() {
